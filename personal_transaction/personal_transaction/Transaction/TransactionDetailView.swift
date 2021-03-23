@@ -19,7 +19,7 @@ struct TransactionDetailView: View {
             LazyVStack {
                 VStack(spacing: 12) {
                     HStack {
-                        LabelView("Transaction Detials", type: .title)
+                        LabelView("Transaction Details", type: .title)
                         Spacer()
                         Button(action: {
                             self.hideTransaction = !hideTransaction
@@ -60,16 +60,10 @@ struct TransactionDetailView: View {
                         }
                         .padding(.horizontal, 16)
                         
-                        Button(action: {
+                        ActionButtonView(text: "Make Payment", action: {
                             
-                        }, label: {
-                            LabelView("Make Payment")
-                                .foregroundColor(.white)
-                                .padding(.vertical, 16)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.orange)
-                                .cornerRadius(1)
                         })
+                        .cornerRadius(1)
                         .padding(.top, 8)
                     }
                 }

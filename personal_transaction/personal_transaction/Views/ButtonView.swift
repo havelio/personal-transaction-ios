@@ -30,3 +30,20 @@ struct BackButtonView: View {
         })
     }
 }
+
+struct ActionButtonView: View {
+
+    var text: String
+    var action: () -> Void?
+    var maxWidth: CGFloat = .infinity
+
+    var body: some View {
+        Button(action: { action() }, label: {
+            LabelView(text)
+                .foregroundColor(.white)
+                .padding(.vertical, 16)
+                .frame(maxWidth: maxWidth)
+                .background(Color.orange)
+        })
+    }
+}
