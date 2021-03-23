@@ -19,9 +19,7 @@ struct TransactionDetailView: View {
             LazyVStack {
                 VStack(spacing: 12) {
                     HStack {
-                        Text("Transaction detials")
-                            .font(.system(size: 16))
-                            .fontWeight(.medium)
+                        LabelView("Transaction Detials", type: .title)
                         Spacer()
                         Button(action: {
                             self.hideTransaction = !hideTransaction
@@ -38,38 +36,26 @@ struct TransactionDetailView: View {
                         })
                     }
                     .padding(16)
-                    .background(Color.blue.opacity(0.04))
+                    .background(Color.secondaryBlue)
                     
                     if !hideTransaction {
                         VStack(alignment: .leading, spacing: 16) {
                             HStack(spacing: 25) {
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text("Payment")
-                                        .font(.system(size: 12))
-                                        .foregroundColor(.gray)
-                                    
-                                    Text(transaction.paymentType.displayName)
-                                        .font(.system(size: 12))
+                                    LabelView("Payment", type: .smallSecondary)
+                                    LabelView(transaction.paymentType.displayName, type: .small)
                                 }
                                 
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text("Created")
-                                        .font(.system(size: 12))
-                                        .foregroundColor(.gray)
-                                    
-                                    Text(transaction.createdDisplay)
-                                        .font(.system(size: 12))
+                                    LabelView("Created", type: .smallSecondary)
+                                    LabelView(transaction.createdDisplay, type: .small)
                                 }
                                 Spacer()
                             }
                             
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Total")
-                                    .font(.system(size: 12))
-                                    .foregroundColor(.gray)
-                                
-                                Text(transaction.totalDisplay)
-                                    .font(.system(size: 12))
+                                LabelView("Total", type: .smallSecondary)
+                                LabelView(transaction.totalDisplay, type: .small)
                             }
                         }
                         .padding(.horizontal, 16)
@@ -77,8 +63,7 @@ struct TransactionDetailView: View {
                         Button(action: {
                             
                         }, label: {
-                            Text("Make Payment")
-                                .font(.system(size: 15))
+                            LabelView("Make Payment")
                                 .foregroundColor(.white)
                                 .padding(.vertical, 16)
                                 .frame(maxWidth: .infinity)
@@ -88,10 +73,7 @@ struct TransactionDetailView: View {
                         .padding(.top, 8)
                     }
                 }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(Color.gray.opacity(0.4), lineWidth: 1)
-                )
+                .cornerBorder()
                 .padding(.horizontal, 16)
             }
             .padding(.vertical, 16)
@@ -99,17 +81,10 @@ struct TransactionDetailView: View {
         .navigationTitle("Transaction Details")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: Button(action: {
+        .navigationBarItems(leading: BackButtonView(action: {
             self.presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Image(systemName: "chevron.left")
-                .foregroundColor(.white)
-
-        }), trailing: Button(action: {
+        }), trailing: HelpButtonView(action: {
             
-        }, label: {
-            Image(systemName: "questionmark.circle")
-                .foregroundColor(.white)
         }))
     }
 }

@@ -16,6 +16,10 @@
 		7274DE2C2609F1F800850BC4 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE292609F1F800850BC4 /* TransactionDetailView.swift */; };
 		7274DE2D2609F1F800850BC4 /* TransactionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE2A2609F1F800850BC4 /* TransactionItemView.swift */; };
 		7274DE312609F20500850BC4 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE302609F20500850BC4 /* TransactionModel.swift */; };
+		7274DE402609F37500850BC4 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE3F2609F37500850BC4 /* LabelView.swift */; };
+		7274DE492609F65E00850BC4 /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE482609F65E00850BC4 /* ViewExtentions.swift */; };
+		7274DE4C2609F9C200850BC4 /* ColorExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */; };
+		7274DE4F2609FBB300850BC4 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4E2609FBB300850BC4 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		7274DE292609F1F800850BC4 /* TransactionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		7274DE2A2609F1F800850BC4 /* TransactionItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionItemView.swift; sourceTree = "<group>"; };
 		7274DE302609F20500850BC4 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		7274DE3F2609F37500850BC4 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		7274DE482609F65E00850BC4 /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
+		7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentions.swift; sourceTree = "<group>"; };
+		7274DE4E2609FBB300850BC4 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 		7274DE0E2609F17900850BC4 /* personal_transaction */ = {
 			isa = PBXGroup;
 			children = (
+				7274DE422609F5FB00850BC4 /* Extentions */,
+				7274DE352609F31600850BC4 /* Views */,
 				7274DE2F2609F1FE00850BC4 /* Models */,
 				7274DE272609F1EE00850BC4 /* Transaction */,
 				7274DE1F2609F1B300850BC4 /* Account */,
@@ -106,6 +116,24 @@
 				7274DE302609F20500850BC4 /* TransactionModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7274DE352609F31600850BC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7274DE3F2609F37500850BC4 /* LabelView.swift */,
+				7274DE4E2609FBB300850BC4 /* ButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7274DE422609F5FB00850BC4 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				7274DE482609F65E00850BC4 /* ViewExtentions.swift */,
+				7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +208,13 @@
 				7274DE2D2609F1F800850BC4 /* TransactionItemView.swift in Sources */,
 				7274DE212609F1D700850BC4 /* AccountView.swift in Sources */,
 				7274DE2C2609F1F800850BC4 /* TransactionDetailView.swift in Sources */,
+				7274DE492609F65E00850BC4 /* ViewExtentions.swift in Sources */,
 				7274DE2B2609F1F800850BC4 /* TransactionView.swift in Sources */,
 				7274DE312609F20500850BC4 /* TransactionModel.swift in Sources */,
+				7274DE4F2609FBB300850BC4 /* ButtonView.swift in Sources */,
+				7274DE402609F37500850BC4 /* LabelView.swift in Sources */,
 				7274DE122609F17900850BC4 /* ContentView.swift in Sources */,
+				7274DE4C2609F9C200850BC4 /* ColorExtentions.swift in Sources */,
 				7274DE102609F17900850BC4 /* personal_transactionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

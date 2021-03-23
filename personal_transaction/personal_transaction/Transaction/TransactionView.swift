@@ -17,11 +17,12 @@ struct TransactionView: View {
                             .resizable()
                             .frame(width: 12, height: 12)
                             .padding(.top, 2)
-                        Text("Get a change for automatic limit increase by always paying on time")
+                        Text("Don't forget to save your money for investment")
                             .font(.system(size: 12))
+                            .frame(maxWidth: .infinity)
                     }
                     .padding(16)
-                    .background(Color(.sRGB, red: 255, green: 210, blue: 0, opacity: 1))
+                    .background(Color.secondaryYellow)
                     .cornerRadius(7)
 
                     ForEach(transactions, id: \.id) { transaction in
@@ -33,7 +34,7 @@ struct TransactionView: View {
                             .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .padding(.vertical, 16)
+                .padding(16)
             }
             .navigationBarTitle("Transactions", displayMode: .inline)
         }
