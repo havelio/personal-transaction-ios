@@ -34,6 +34,10 @@ struct TransactionDetailView: View {
                     .background(Color.secondaryBlue)
                     
                     VStack(alignment: .leading, spacing: 16) {
+                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .fill(Color.gray)
+                            .frame(maxWidth: .infinity, idealHeight: 180)
+
                         LabelView(transaction.name)
                             .lineLimit(0)
                             .padding(.bottom, 12)
