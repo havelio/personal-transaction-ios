@@ -95,9 +95,7 @@ struct TransactionDetailView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButtonView(action: {
             self.presentationMode.wrappedValue.dismiss()
-        }), trailing: HelpButtonView(action: {
-            // move to help view
-        }))
+        }), trailing: HelpButtonView())
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Are you sure?"),

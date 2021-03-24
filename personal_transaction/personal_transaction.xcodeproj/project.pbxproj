@@ -24,6 +24,7 @@
 		7274DE492609F65E00850BC4 /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE482609F65E00850BC4 /* ViewExtentions.swift */; };
 		7274DE4C2609F9C200850BC4 /* ColorExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */; };
 		7274DE4F2609FBB300850BC4 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4E2609FBB300850BC4 /* ButtonView.swift */; };
+		72758AB2260B445400F9B823 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72758AB1260B445400F9B823 /* HelpView.swift */; };
 		727BCF09260B16DB00FD901F /* TransactionAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BCF08260B16DB00FD901F /* TransactionAddView.swift */; };
 		72940047260B33AF0023E7EE /* Utlis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72940046260B33AF0023E7EE /* Utlis.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		7274DE482609F65E00850BC4 /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
 		7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentions.swift; sourceTree = "<group>"; };
 		7274DE4E2609FBB300850BC4 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		72758AB1260B445400F9B823 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		727BCF08260B16DB00FD901F /* TransactionAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAddView.swift; sourceTree = "<group>"; };
 		72940046260B33AF0023E7EE /* Utlis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utlis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				7274DE3F2609F37500850BC4 /* LabelView.swift */,
 				7274DE4E2609FBB300850BC4 /* ButtonView.swift */,
 				722B3AB2260B02A900ECF81E /* TextFIeldView.swift */,
+				72758AB1260B445400F9B823 /* HelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				722B3AB6260B0D1800ECF81E /* Device.swift in Sources */,
 				7274DE402609F37500850BC4 /* LabelView.swift in Sources */,
 				7274DE122609F17900850BC4 /* ContentView.swift in Sources */,
+				72758AB2260B445400F9B823 /* HelpView.swift in Sources */,
 				7274DE4C2609F9C200850BC4 /* ColorExtentions.swift in Sources */,
 				727BCF09260B16DB00FD901F /* TransactionAddView.swift in Sources */,
 				722B3AB3260B02A900ECF81E /* TextFIeldView.swift in Sources */,

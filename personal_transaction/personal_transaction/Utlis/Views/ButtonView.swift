@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct HelpButtonView: View {
-    
-    var action: () -> Void?
-    
+
     var body: some View {
-        Button(action: { action() }, label: {
-            Image(systemName: "questionmark.circle")
-                .foregroundColor(.white)
-        })
+        NavigationLink(
+            destination: HelpView(),
+            label: {
+                Image(systemName: "questionmark.circle")
+                    .foregroundColor(.white)
+            })
+            .accentColor(.white)
     }
 }
 
