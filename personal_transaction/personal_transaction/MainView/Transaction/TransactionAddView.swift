@@ -12,9 +12,9 @@ struct TransactionAddView: View {
     @State private var trxName = ""
     @State private var paymentType = Transaction.PaymentType.cash.displayName
     @State private var trxTotal = ""
+    @State private var trxDate = Date()
 
-    @State var trxDate = Date()
-    @State var paymentTypeSelected = false
+    @State private var showAlert = false
 
     @Environment(\.presentationMode) var presentationMode
 
@@ -45,11 +45,20 @@ struct TransactionAddView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButtonView(action: {
             presentationMode.wrappedValue.dismiss()
-        }), trailing: Button(action: {            presentationMode.wrappedValue.dismiss()
+        }), trailing: Button(action: {
+            if trxName.isEmpty || trxTotal.isEmpty {
+                showAlert = true
+            } else {
+                presentationMode.wrappedValue.dismiss()
+            }
         }, label: {
             Text("Save")
                 .foregroundColor(.white)
         }))
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Please Complete the form"),
+                  message: Text("Transaction Name or Total cannot be empty"))
+        }
     }
 }
 

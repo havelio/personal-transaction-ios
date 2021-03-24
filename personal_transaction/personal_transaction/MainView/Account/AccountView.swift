@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct AccountView: View {
     
     @AppStorage(UserDefaultsKeys.userName.rawValue) var fullname: String = UserDefaults.standard.fullName
+    
+    @State var showClearDataAlert = false
     
     var body: some View {
         ScrollView {
@@ -44,33 +47,58 @@ struct AccountView: View {
                         .accentColor(.primary)
                     Divider()
 
-                    HStack(spacing: 7) {
-                        Image(systemName: "phone")
-                        LabelView("Contact Me")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
+                    Button(action: {
+                        open(url: UserDefaults.standard.githubUrl)
+                    }, label: {
+                        HStack(spacing: 7) {
+                            Image(systemName: "phone")
+                            LabelView("Contact Me")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    })
+                    .accentColor(.primary)
+                    Divider()
+
+                    Button(action: {
+                        if let scene = UIApplication.shared.windows.first?.windowScene { SKStoreReviewController.requestReview(in: scene)
+                        }
+                    }, label: {
+                        HStack(spacing: 7) {
+                            Image(systemName: "star")
+                            LabelView("Rate This App")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    })
+                    .accentColor(.primary)
+
                     Divider()
                 
-                    HStack(spacing: 7) {
-                        Image(systemName: "star")
-                        LabelView("Rate This App")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
-                    Divider()
-                
-                    HStack(spacing: 7) {
-                        Image(systemName: "trash")
-                        LabelView("Clear Data")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
+                    Button(action: {
+                        showClearDataAlert = true
+                    }, label: {
+                        HStack(spacing: 7) {
+                            Image(systemName: "trash")
+                            LabelView("Clear Data")
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    })
+                    .accentColor(.primary)
                 }
             }
             .padding(20)
         }
         .navigationBarTitle("Account", displayMode: .inline)
+        .alert(isPresented: $showClearDataAlert) {
+            Alert(
+                title: Text("Clear Data?"),
+                message: Text("Are you sure to delete all your data"),
+                primaryButton: .destructive(Text("Yes Clear Data"), action: { resetDefaults() }),
+                secondaryButton: .cancel()
+            )
+        }
     }
 }
 

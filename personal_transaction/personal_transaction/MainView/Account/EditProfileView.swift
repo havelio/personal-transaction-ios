@@ -15,6 +15,8 @@ struct EditProfileView: View {
     @State private var githubUrl = UserDefaults.standard.githubUrl
     @State private var linkedinUrl = UserDefaults.standard.linkedinUrl
     
+    @State private var showAlert = false
+    
     var body: some View {
         VStack(spacing: 25) {
             VStack(alignment: .leading) {
@@ -37,15 +39,23 @@ struct EditProfileView: View {
         .navigationBarItems(leading: BackButtonView(action: {
             presentationMode.wrappedValue.dismiss()
         }), trailing: Button(action: {
-            let db = UserDefaults.standard
-            db.fullName = self.fullname.capitalized
-            db.githubUrl = self.githubUrl
-            db.linkedinUrl = self.linkedinUrl
-            presentationMode.wrappedValue.dismiss()
+            
+            if fullname.isEmpty {
+                showAlert = true
+            } else {
+                let db = UserDefaults.standard
+                db.fullName = fullname.capitalized
+                db.githubUrl = githubUrl
+                db.linkedinUrl = linkedinUrl
+                presentationMode.wrappedValue.dismiss()
+            }
         }, label: {
             Text("Save")
                 .foregroundColor(.white)
         }))
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Please complete your profile"))
+        }
     }
 }
 

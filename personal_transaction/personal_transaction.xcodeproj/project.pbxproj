@@ -25,6 +25,7 @@
 		7274DE4C2609F9C200850BC4 /* ColorExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */; };
 		7274DE4F2609FBB300850BC4 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274DE4E2609FBB300850BC4 /* ButtonView.swift */; };
 		727BCF09260B16DB00FD901F /* TransactionAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BCF08260B16DB00FD901F /* TransactionAddView.swift */; };
+		72940047260B33AF0023E7EE /* Utlis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72940046260B33AF0023E7EE /* Utlis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentions.swift; sourceTree = "<group>"; };
 		7274DE4E2609FBB300850BC4 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		727BCF08260B16DB00FD901F /* TransactionAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAddView.swift; sourceTree = "<group>"; };
+		72940046260B33AF0023E7EE /* Utlis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utlis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +82,10 @@
 		7274DE0E2609F17900850BC4 /* personal_transaction */ = {
 			isa = PBXGroup;
 			children = (
-				7274DE422609F5FB00850BC4 /* Extentions */,
-				7274DE352609F31600850BC4 /* Views */,
+				72940044260B33320023E7EE /* MainView */,
+				72940043260B33180023E7EE /* Utlis */,
 				7274DE2F2609F1FE00850BC4 /* Models */,
-				7274DE272609F1EE00850BC4 /* Transaction */,
-				7274DE1F2609F1B300850BC4 /* Account */,
 				7274DE0F2609F17900850BC4 /* personal_transactionApp.swift */,
-				7274DE112609F17900850BC4 /* ContentView.swift */,
 				7274DE132609F17D00850BC4 /* Assets.xcassets */,
 				7274DE182609F17D00850BC4 /* Info.plist */,
 				7274DE152609F17D00850BC4 /* Preview Content */,
@@ -149,6 +148,26 @@
 				7274DE4B2609F9C200850BC4 /* ColorExtentions.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		72940043260B33180023E7EE /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				7274DE422609F5FB00850BC4 /* Extentions */,
+				7274DE352609F31600850BC4 /* Views */,
+				72940046260B33AF0023E7EE /* Utlis.swift */,
+			);
+			path = Utlis;
+			sourceTree = "<group>";
+		};
+		72940044260B33320023E7EE /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				7274DE272609F1EE00850BC4 /* Transaction */,
+				7274DE1F2609F1B300850BC4 /* Account */,
+				7274DE112609F17900850BC4 /* ContentView.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +246,7 @@
 				7274DE2B2609F1F800850BC4 /* TransactionView.swift in Sources */,
 				722B3AB0260AF8AB00ECF81E /* UserModel.swift in Sources */,
 				7274DE312609F20500850BC4 /* TransactionModel.swift in Sources */,
+				72940047260B33AF0023E7EE /* Utlis.swift in Sources */,
 				722B3AAD260AF77700ECF81E /* EditProfileView.swift in Sources */,
 				7274DE4F2609FBB300850BC4 /* ButtonView.swift in Sources */,
 				722B3AB6260B0D1800ECF81E /* Device.swift in Sources */,

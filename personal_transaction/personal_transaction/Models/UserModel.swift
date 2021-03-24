@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserDefaultsKeys : String {
+enum UserDefaultsKeys: String {
     case userName,
          githubUrl,
          linkedinUrl
@@ -16,17 +16,17 @@ enum UserDefaultsKeys : String {
 extension UserDefaults {
 
     @objc dynamic var fullName: String {
-        get { return string(forKey: UserDefaultsKeys.userName.rawValue) ?? "Havelio Henar" }
+        get { return string(forKey: UserDefaultsKeys.userName.rawValue) ?? Constant.userName }
         set { set(newValue, forKey: UserDefaultsKeys.userName.rawValue) }
     }
     
     @objc dynamic var githubUrl: String {
-        get { return string(forKey: UserDefaultsKeys.githubUrl.rawValue) ?? "" }
+        get { return string(forKey: UserDefaultsKeys.githubUrl.rawValue) ?? Constant.githubUrl }
         set { set(newValue, forKey: UserDefaultsKeys.githubUrl.rawValue) }
     }
     
     @objc dynamic var linkedinUrl: String {
-        get { return string(forKey: UserDefaultsKeys.linkedinUrl.rawValue) ?? "" }
+        get { return string(forKey: UserDefaultsKeys.linkedinUrl.rawValue) ?? Constant.linkedInUrl }
         set { set(newValue, forKey: UserDefaultsKeys.linkedinUrl.rawValue) }
     }
 }
