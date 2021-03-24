@@ -29,6 +29,7 @@ struct Transaction: Identifiable {
     let name: String
     let paymentTypeValue: Int
     let total: Double
+    let notes: String
     let created: Date
 
     var totalDisplay: String {
@@ -55,14 +56,15 @@ struct Transaction: Identifiable {
         self.paymentTypeValue = paymentTypeValue
         self.total = total
         self.created = created
+        self.notes = "-"
     }
 }
 
 // dumy data
 let transactions = [
-    Transaction(name: "Belanja di Tokopedia VTAYYA Air boom Pro 2", paymentTypeValue: 3, total: 14000, created: Date()),
-    Transaction(name: "Belanja di Bukalapak VTAYYA Air boom Pro 2", paymentTypeValue: 0, total: 100000, created: Date()),
-    Transaction(name: "Belanja di Lazada VTAYYA Air boom Pro 2", paymentTypeValue: 0, total: 84000, created: Date()),
-    Transaction(name: "Belanja di Tiket.com VTAYYA Air boom Pro 2", paymentTypeValue: 1, total: 124000, created: Date()),
-    Transaction(name: "Belanja di Shoppie VTAYYA Air boom Pro 2", paymentTypeValue: 2, total: 92000, created: Date())
+    Transaction(name: "Belanja di Toko Offline Galon Air Pro 2.2", paymentTypeValue: 3, total: 14000, created: Date()),
+    Transaction(name: "Belanja di Toko Online Merah Garam Max Pro (Flash Sale)", paymentTypeValue: 0, total: 100000, created: Date()),
+    Transaction(name: "Belanja di Toko Online Hijau Beras 1Liter (Diskon)", paymentTypeValue: 0, total: 84000, created: Date()),
+    Transaction(name: "Belanja Tiket Pesawat ke Bali PP 5 Hari", paymentTypeValue: 1, total: 124000, created: Date()),
+    Transaction(name: "Belanja di Nonton Avenger Assembel", paymentTypeValue: 2, total: 92000, created: Date())
 ]

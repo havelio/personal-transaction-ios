@@ -37,6 +37,12 @@ struct TransactionView: View {
                 .padding(16)
             }
             .navigationBarTitle("Transactions", displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                
+            }, label: {
+                Image(systemName: "plus")
+                    .foregroundColor(.white)
+            }))
         }
     }
 }

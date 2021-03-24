@@ -10,7 +10,7 @@ import SwiftUI
 struct LabelView: View {
     
     enum LabelType {
-        case small, smallSecondary, normal, normalSecondary, large, title
+        case small, smallSecondary, normal, normalSecondary, large, title, veryLarge
     }
 
     var text: String
@@ -47,6 +47,10 @@ struct LabelView: View {
             return Text(text)
                 .font(.system(size: 16))
                 .fontWeight(.medium)
+
+        case .veryLarge:
+            return Text(text)
+                .font(.system(size: 18))
         }
     }
 }
