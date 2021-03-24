@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TransactionAddView: View {
-    
-    @State private var trxName = ""
-    @State private var paymentType = Transaction.PaymentType.cash.displayName
-    @State private var trxTotal = ""
-    @State private var trxDate = Date()
+
+    @State var trxName = ""
+    @State var paymentType = Transaction.PaymentType.cash.displayName
+    @State var trxTotal = ""
+    @State var trxDate = Date()
 
     @State private var showAlert = false
 
@@ -49,6 +49,7 @@ struct TransactionAddView: View {
             if trxName.isEmpty || trxTotal.isEmpty {
                 showAlert = true
             } else {
+                // update or create
                 presentationMode.wrappedValue.dismiss()
             }
         }, label: {

@@ -11,6 +11,8 @@ struct TransactionDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State private var showAlert = false
+    
     let transaction: Transaction
 
     var body: some View {
@@ -21,7 +23,9 @@ struct TransactionDetailView: View {
                         LabelView("Transaction Details", type: .title)
                         Spacer()
 
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.showAlert = true
+                        }, label: {
                             Image(systemName: "trash")
                                 .foregroundColor(.primary)
                         })
@@ -62,9 +66,27 @@ struct TransactionDetailView: View {
                 .cornerBorder(radius: 5)
                 .padding(.horizontal, 16)
 
-                ActionButtonView(text: "Edit", action: {})
-                    .cornerRadius(5)
-                    .padding(.horizontal, 16)
+                NavigationLink(
+                    destination:
+                        TransactionAddView(
+                            trxName: transaction.name,
+                            paymentType: transaction.paymentType.displayName,
+                            trxTotal: "\(transaction.total)",
+                            trxDate: transaction.created
+                        ),
+                    label: {
+                        HStack {
+                            Spacer()
+                            LabelView("Edit")
+                                .foregroundColor(.white)
+                                .padding(18)
+                            Spacer()
+                        }
+                        .background(Color.orange)
+                        .cornerRadius(5)
+                        .padding(.horizontal, 16)
+                    })
+                    .buttonStyle(PlainButtonStyle())
             }
             .padding(.vertical, 16)
         }
@@ -74,8 +96,17 @@ struct TransactionDetailView: View {
         .navigationBarItems(leading: BackButtonView(action: {
             self.presentationMode.wrappedValue.dismiss()
         }), trailing: HelpButtonView(action: {
-            
+            // move to help view
         }))
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("Are you sure to delete this transaction?"),
+                primaryButton: .destructive(Text("Yes"), action: {
+                    // delete this trx
+                    self.presentationMode.wrappedValue.dismiss()
+                }), secondaryButton: .cancel())
+        }
     }
 }
 
