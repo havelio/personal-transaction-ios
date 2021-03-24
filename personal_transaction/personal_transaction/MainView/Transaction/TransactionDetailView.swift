@@ -69,6 +69,7 @@ struct TransactionDetailView: View {
                 NavigationLink(
                     destination:
                         TransactionAddView(
+                            title: "Edit Transaction",
                             trxName: transaction.name,
                             paymentType: transaction.paymentType.displayName,
                             trxTotal: "\(transaction.total)",

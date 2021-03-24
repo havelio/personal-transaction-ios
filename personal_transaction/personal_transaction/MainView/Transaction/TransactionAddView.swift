@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TransactionAddView: View {
 
+    var title = "Add Transaction"
     @State var trxName = ""
     @State var paymentType = Transaction.PaymentType.cash.displayName
     @State var trxTotal = ""
@@ -41,7 +42,7 @@ struct TransactionAddView: View {
                 DatePicker("Transaction Date", selection: $trxDate, displayedComponents: .date)
             }
         }
-        .navigationBarTitle("Add Transaction", displayMode: .inline)
+        .navigationBarTitle(title, displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButtonView(action: {
             presentationMode.wrappedValue.dismiss()
