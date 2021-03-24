@@ -19,19 +19,25 @@ struct ContentView: View {
     }
 
     var body: some View {
+        
         TabView(selection: $selection) {
-            TransactionView()
-                .tabItem {
-                    let systemImage = selection == 0 ? "cart.fill" : "cart"
-                    Label("Transaction", systemImage: systemImage)
-                }
-                .tag(0)
-            AccountView()
-                .tabItem {
-                    let systemImage = selection == 1 ? "person.fill" : "person"
-                    Label("Account", systemImage: systemImage)
-                }
-                .tag(1)
+            NavigationView {
+                TransactionView()
+            }
+            .tabItem {
+                let systemImage = selection == 0 ? "cart.fill" : "cart"
+                Label("Transaction", systemImage: systemImage)
+            }
+            .navigationBarHidden(true)
+            .tag(0)
+            NavigationView {
+                AccountView()
+            }
+            .tabItem {
+                let systemImage = selection == 1 ? "person.fill" : "person"
+                Label("Account", systemImage: systemImage)
+            }
+            .tag(1)
         }
     }
 }

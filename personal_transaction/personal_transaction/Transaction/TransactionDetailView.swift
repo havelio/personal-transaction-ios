@@ -23,7 +23,7 @@ struct TransactionDetailView: View {
 
                         Button(action: {}, label: {
                             Image(systemName: "trash")
-                                .foregroundColor(.black)
+                                .foregroundColor(.primary)
                         })
                     }
                     .padding(16)

@@ -48,20 +48,25 @@ struct ActionButtonView: View {
     }
 }
 
-struct RedButtonView: View {
+struct ClearButton: ViewModifier {
+    @Binding var text: String
+    @Binding var visible: Bool
 
-    var text: String
-    var action: () -> Void?
-    var maxWidth: CGFloat = .infinity
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .trailing) {
+            content
 
-    var body: some View {
-        Button(action: { action() }, label: {
-            LabelView(text)
-                .foregroundColor(.white)
-                .padding(.vertical, 16)
-                .frame(maxWidth: maxWidth)
-//                .background(Color.orange)
-        })
+            Spacer()
+            if !text.isEmpty {
+                Button(action: {
+                    self.text = ""
+                }, label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(Color(UIColor.opaqueSeparator))
+                })
+                .opacity(visible ? 1 : 0)
+                .padding(.trailing, 8)
+            }
+        }
     }
 }
-

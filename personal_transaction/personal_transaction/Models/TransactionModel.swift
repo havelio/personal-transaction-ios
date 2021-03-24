@@ -9,7 +9,9 @@ import Foundation
 
 struct Transaction: Identifiable {
     
-    enum PaymentType: Int {
+    enum PaymentType: Int, CaseIterable, Identifiable {
+        var id: String { self.displayName }
+        
         case cash,
              creditCard,
              debitCard,
