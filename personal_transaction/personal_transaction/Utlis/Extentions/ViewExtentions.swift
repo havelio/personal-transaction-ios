@@ -13,7 +13,7 @@ extension View {
                       color: Color = Color.gray.opacity(0.4)) -> some View {
         return overlay(
             RoundedRectangle(cornerRadius: radius)
-                .stroke(Color.gray.opacity(0.4), lineWidth: lineWidth)
+                .stroke(color, lineWidth: lineWidth)
         )
     }
 }

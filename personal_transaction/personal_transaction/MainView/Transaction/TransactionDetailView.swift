@@ -33,12 +33,13 @@ struct TransactionDetailView: View {
                         
                         RoundedRectangle(cornerRadius: 15, style: .continuous)
                             .fill(Color.gray)
-                            .frame(maxWidth: .infinity, idealHeight: 140)
+                            .frame(maxWidth: .infinity, idealHeight: 160)
                         
                         VStack(alignment: .leading, spacing: 5) {
                             LabelView("Notes:", type: .smallSecondary)
                             LabelView(transaction.notes, type: .smallSecondary)
                         }
+                        .padding(.bottom, 16)
 
                         VStack(spacing: 15) {
                             HStack {
