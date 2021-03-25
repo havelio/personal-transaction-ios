@@ -58,7 +58,7 @@ struct Transaction: Identifiable {
         self.paymentTypeValue = paymentTypeValue
         self.total = total
         self.created = created
-        self.notes = "-"
+        self.notes = "Ini adalah contoh notes lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
     }
 }
 
